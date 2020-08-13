@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Todo list</title>
+    </head>
+    <body>
+        <header>
+            <h1>Todo list</h1>
+        </header>
+        <main>
+            <form class="todo_creator">
+                <input
+                    type="text"
+                    placeholder="Feed the fish..."
+                    class="todo_input todo_creator_input"
+                    id="todo_creator_input"
+                    autofocus
+                />
+                <button
+                    class="todo_button todo_creator_button"
+                    id="todo_creator_button"
+                    type="submit"
+                >
+                    <svg
+                        class="todo_button_svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="#ffffff"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <rect x="7" width="2" height="16" rx="1" />
+                        <rect
+                            x="16"
+                            y="7"
+                            width="2"
+                            height="16"
+                            rx="1"
+                            transform="rotate(90 16 7)"
+                        />
+                    </svg>
+                </button>
+            </form>
+            <section id="todo_tools" class="todo_tools">
+                <input
+                    type="text"
+                    placeholder="I am looking for..."
+                    class="todo_input todo_searcher_input"
+                    id="todo_searcher_input"
+                />
+                <svg
+                    class="todo_searcher_input_svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect
+                        x="7.07104"
+                        y="8"
+                        width="2"
+                        height="9"
+                        rx="1"
+                        transform="rotate(45 7.07104 8)"
+                        fill="#C4C4C4"
+                    />
+                    <circle
+                        class="todo_searcher_input_svg_outer_circle"
+                        cx="10"
+                        cy="6"
+                        r="6"
+                        fill="#C4C4C4"
+                    />
+                    <circle cx="10" cy="6" r="4" fill="#ffffff" />
+                </svg>
+                <button
+                    class="todo_button todo_fullclearer_button"
+                    id="todo_fullclearer_button"
+                >
+                    Clear all
+                </button>
+            </section>
+            <section class="todo_container">
+                <ul class="todo_list" id="todo_list"></ul>
+            </section>
+        </main>
+
+        <script src="./index.js"></script>
+    </body>
+</html>

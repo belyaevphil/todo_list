@@ -1,0 +1,365 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Custom styles */
+html {
+    font-size: 10px;
+    color: #313131;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 4.8rem;
+    margin-top: 145px;
+}
+
+.todo_creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.todo_tools {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.todo_tools svg {
+    position: absolute;
+    top: 12px;
+    right: 131px;
+}
+
+.add_todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.search_todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.todo_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.todo_input {
+    background-color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    color: #313131;
+    font-size: 18px;
+    height: 40px;
+    line-height: 20px;
+    border-style: none;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    padding: 0 20px;
+}
+
+.todo_input::placeholder {
+    font-family: 'Ubuntu', sans-serif;
+    color: #c4c4c4;
+    font-size: 1.8rem;
+}
+
+.todo_input:focus {
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
+    height: 36px;
+}
+
+.todo_creator_input {
+    width: 265px;
+}
+
+.todo_creator_input:focus {
+    width: 261px;
+    border-color: #8a77ff;
+}
+
+.todo_searcher_input {
+    width: 163px;
+    padding: 0 56px 0 20px;
+}
+
+.todo_searcher_input:focus {
+    width: 159px;
+}
+
+.search_todo_input {
+    width: 140px;
+}
+
+.todo_input.todo_item_input {
+    width: 220px;
+}
+
+.todo_input.todo_item_input.input_edit_mode {
+    height: 36px;
+    width: 216px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #00d108;
+}
+
+.todo_button {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8rem;
+    height: 40px;
+    border-style: none;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+    margin-left: 5px;
+    margin-right: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo_button:focus,
+.todo_button:hover {
+    outline: none;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.todo_creator_button {
+    background-color: #8a77ff;
+    width: 40px;
+}
+
+.todo_creator_button:focus {
+    border-color: #8a77ff;
+}
+
+.todo_creator_button:hover {
+    border-color: #8a77ff;
+}
+
+.todo_creator_button:focus svg,
+.todo_creator_button:hover svg {
+    fill: #8a77ff;
+}
+
+.todo_fullclearer_button {
+    background-color: #ea0001;
+    color: #ffffff;
+    width: 106px;
+}
+
+.todo_fullclearer_button:hover,
+.todo_fullclearer_button:focus {
+    border-color: #ea0001;
+    color: #ea0001;
+}
+
+.edit_todo_button {
+    background-color: #00d108;
+    width: 40px;
+}
+
+.edit_mode,
+.edit_todo_button:hover {
+    background-color: #ffffff;
+    transition: 200ms;
+    border-color: #00d108;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+}
+
+.edit_todo_button:focus {
+    border-color: #00d108;
+}
+
+.edit_mode .edit_todo_button_svg path,
+.edit_todo_button:hover .edit_todo_button_svg path,
+.edit_todo_button:focus .edit_todo_button_svg path {
+    fill: #00d108;
+}
+
+.edit_mode:hover {
+    background-color: #00d108;
+    border-style: none;
+}
+
+.edit_mode:hover .edit_todo_button_svg path {
+    fill: #ffffff;
+}
+
+.remove_todo_button {
+    background-color: #ea0001;
+    width: 40px;
+}
+
+.remove_todo_button:hover,
+.remove_todo_button:focus {
+    border-color: #ea0001;
+}
+
+.remove_todo_button:focus .remove_todo_button_svg,
+.remove_todo_button:hover .remove_todo_button_svg {
+    fill: #ea0001;
+}
+
+.todo_fullclearer_button {
+    width: 106px;
+}
+
+.todo_fullclearer_button:hover {
+    border-color: #ea0001;
+}
+
+.todo_button_svg,
+.todo_searcher_input_svg,
+.remove_todo_button_svg,
+.edit_todo_button_svg {
+    pointer-events: none;
+}

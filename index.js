@@ -101,6 +101,16 @@ const getFromLocalStorage = () => {
     })
 }
 
+const getRandomPlaceholder = () => {
+    const availablePlaceholders = ['Feed the fish...', 'Clean the room...', 'Do homework...']
+    return availablePlaceholders[Math.floor(Math.random() * availablePlaceholders.length)]
+}
+
+const toDoOnWindowLoad = () => {
+    todoCreatorInput.placeholder = getRandomPlaceholder()
+    getFromLocalStorage()
+}
+
 const deleteFromLocalStorage = (todo) => {
     const todos = checkIfTodosExist()
 
@@ -239,4 +249,4 @@ todoCreatorButton.onclick = handleAddTodo
 todoList.onclick = handleTodoItemButtons
 todoFullClearerButton.onclick = handleClearAllTodoItems
 todoSearcherInput.oninput = () => handleInputChange(todoSearcherInput.value)
-window.onload = getFromLocalStorage
+window.onload = toDoOnWindowLoad

@@ -6,28 +6,30 @@ const todoSearcherInput = document.querySelector("#todo_searcher_input")
 const todoTools = document.querySelector("#todo_tools")
 const todoContainer = document.querySelector("#todo_container")
 
-const checkIfTodosExist = () => {
+const storageName = 'todos'
+
+const getStorageItems = () => {
     let todos
 
-    if (!localStorage.getItem('todos')) {
+    if (!localStorage.getItem(storageName)) {
         todos = []
         return todos
     } else {
-        todos = JSON.parse(localStorage.getItem('todos'))
+        todos = JSON.parse(localStorage.getItem(storageName))
         return todos
     }
 }
 
-const saveToLocalStorage = todo => {
-    const todos = checkIfTodosExist()
+const saveToStorage = todo => {
+    const todos = getStorageItems()
 
     todos.push(todo)
 
-    localStorage.setItem('todos', JSON.stringify(todos))
+    localStorage.setItem(storageName, JSON.stringify(todos))
 }
 
-const getFromLocalStorage = () => {
-    const todos = checkIfTodosExist()
+const renderStorageItems = () => {
+    const todos = getStorageItems()
 
     todos.forEach(todo => {
         const todoItem = document.createElement('li')
@@ -110,19 +112,19 @@ const getRandomPlaceholder = () => {
 
 const toDoOnWindowLoad = () => {
     todoCreatorInput.placeholder = getRandomPlaceholder()
-    getFromLocalStorage()
+    renderStorageItems()
 }
 
-const deleteFromLocalStorage = (todo) => {
-    const todos = checkIfTodosExist()
+const deleteItemFromStorage = (todo) => {
+    const todos = getStorageItems()
 
     const currentItem = todo.children[0].value
     todos.splice(todos.indexOf(currentItem), 1)
 
-    localStorage.setItem('todos', JSON.stringify(todos))
+    localStorage.setItem(storageName, JSON.stringify(todos))
 }
 
-const handleAddTodo = e => {
+const addTodo = e => {
     e.preventDefault()
     e.target.blur()
 
@@ -138,7 +140,7 @@ const handleAddTodo = e => {
         todoItemInput.value = todoCreatorInput.value
         todoCreatorInput.value = ''
         todoItemInput.disabled = true
-        saveToLocalStorage(todoItemInput.value)
+        saveToStorage(todoItemInput.value)
 
         const editTodoButton = document.createElement('button')
         todoItem.append(editTodoButton)
@@ -207,10 +209,10 @@ const handleTodoItemButtons = e => {
     if (todoItemButton.classList[1] === 'remove_todo_button') {
         const todoItem = todoItemButton.parentElement
         const todoList = todoItem.parentElement
-        deleteFromLocalStorage(todoItem)
+        deleteItemFromStorage(todoItem)
         todoItem.remove()
         if (!todoList.children.length) {
-            localStorage.removeItem('todos')
+            localStorage.removeItem(storageName)
             todoTools.style.display = 'none'
             todoContainer.style.display = 'none'
         }
@@ -228,8 +230,8 @@ const handleTodoItemButtons = e => {
     }
 }
 
-const handleClearAllTodoItems = () => {
-    localStorage.removeItem('todos')
+const clearAllTodoItems = () => {
+    localStorage.removeItem(storageName)
     todoList.innerHTML = ''
     todoTools.style.display = 'none'
     todoContainer.style.display = 'none'
@@ -250,8 +252,8 @@ const handleInputChange = text => {
     filterTodos(todos, text)
 }
 
-todoCreatorButton.addEventListener('click', handleAddTodo)
+todoCreatorButton.addEventListener('click', addTodo)
 todoList.addEventListener('click', handleTodoItemButtons)
-todoFullClearerButton.addEventListener('click', handleClearAllTodoItems)
+todoFullClearerButton.addEventListener('click', clearAllTodoItems)
 todoSearcherInput.addEventListener('input', () => handleInputChange(todoSearcherInput.value))
 window.addEventListener('load', toDoOnWindowLoad)

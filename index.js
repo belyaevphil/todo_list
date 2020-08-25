@@ -212,6 +212,7 @@ const handleTodoItemButtons = e => {
         if (!todoList.children.length) {
             localStorage.removeItem('todos')
             todoTools.style.display = 'none'
+            todoContainer.style.display = 'none'
         }
     }
 
@@ -231,6 +232,7 @@ const handleClearAllTodoItems = () => {
     localStorage.removeItem('todos')
     todoList.innerHTML = ''
     todoTools.style.display = 'none'
+    todoContainer.style.display = 'none'
 }
 
 const filterTodos = (todos, text) => {
@@ -248,8 +250,8 @@ const handleInputChange = text => {
     filterTodos(todos, text)
 }
 
-todoCreatorButton.onclick = handleAddTodo
-todoList.onclick = handleTodoItemButtons
-todoFullClearerButton.onclick = handleClearAllTodoItems
-todoSearcherInput.oninput = () => handleInputChange(todoSearcherInput.value)
-window.onload = toDoOnWindowLoad
+todoCreatorButton.addEventListener('click', handleAddTodo)
+todoList.addEventListener('click', handleTodoItemButtons)
+todoFullClearerButton.addEventListener('click', handleClearAllTodoItems)
+todoSearcherInput.addEventListener('input', () => handleInputChange(todoSearcherInput.value))
+window.addEventListener('load', toDoOnWindowLoad)

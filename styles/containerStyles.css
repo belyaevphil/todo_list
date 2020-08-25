@@ -1,0 +1,57 @@
+html {
+    font-size: 10px;
+    color: #313131;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.root-container {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-container {
+    margin: 30px 0 0 0;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 4.8rem;
+}
+
+.todo_creator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo_tools {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 30px 0 0 0;
+}
+
+.todo_container {
+    display: none;
+    margin-top: 10px;
+}
+
+.todo_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo_item:not(:first-child) {
+    margin-top: 10px;
+}

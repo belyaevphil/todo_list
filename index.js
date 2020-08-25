@@ -4,6 +4,7 @@ const todoList = document.querySelector("#todo_list")
 const todoFullClearerButton = document.querySelector("#todo_fullclearer_button")
 const todoSearcherInput = document.querySelector("#todo_searcher_input")
 const todoTools = document.querySelector("#todo_tools")
+const todoContainer = document.querySelector("#todo_container")
 
 const checkIfTodosExist = () => {
     let todos
@@ -98,6 +99,7 @@ const getFromLocalStorage = () => {
         `
 
         todoTools.style.display = 'flex'
+        todoContainer.style.display = 'flex'
     })
 }
 
@@ -195,6 +197,7 @@ const handleAddTodo = e => {
         `
 
         todoTools.style.display = 'flex'
+        todoContainer.style.display = 'flex'
     }
 }
 

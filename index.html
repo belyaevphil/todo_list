@@ -11,86 +11,88 @@
         <title>Todo list</title>
     </head>
     <body>
-        <header>
-            <h1>Todo list</h1>
-        </header>
-        <main>
-            <form class="todo_creator">
-                <input
-                    type="text"
-                    class="todo_input todo_creator_input"
-                    id="todo_creator_input"
-                    autofocus
-                />
-                <button
-                    class="todo_button todo_creator_button"
-                    id="todo_creator_button"
-                    type="submit"
-                >
+        <div class="root-container">
+            <header>
+                <h1>What to do?</h1>
+            </header>
+            <main class="main-container">
+                <form class="todo_creator">
+                    <input
+                        type="text"
+                        class="todo_input todo_creator_input"
+                        id="todo_creator_input"
+                        autofocus
+                    />
+                    <button
+                        class="todo_button todo_creator_button"
+                        id="todo_creator_button"
+                        type="submit"
+                    >
+                        <svg
+                            class="todo_button_svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 16 16"
+                            fill="#ffffff"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect x="7" width="2" height="16" rx="1" />
+                            <rect
+                                x="16"
+                                y="7"
+                                width="2"
+                                height="16"
+                                rx="1"
+                                transform="rotate(90 16 7)"
+                            />
+                        </svg>
+                    </button>
+                </form>
+                <div id="todo_tools" class="todo_tools">
+                    <input
+                        type="text"
+                        placeholder="I am looking for..."
+                        class="todo_input todo_searcher_input"
+                        id="todo_searcher_input"
+                    />
                     <svg
-                        class="todo_button_svg"
+                        class="todo_searcher_input_svg"
                         width="16"
                         height="16"
                         viewBox="0 0 16 16"
-                        fill="#ffffff"
+                        fill="none"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <rect x="7" width="2" height="16" rx="1" />
                         <rect
-                            x="16"
-                            y="7"
+                            x="7.07104"
+                            y="8"
                             width="2"
-                            height="16"
+                            height="9"
                             rx="1"
-                            transform="rotate(90 16 7)"
+                            transform="rotate(45 7.07104 8)"
+                            fill="#C4C4C4"
                         />
+                        <circle
+                            class="todo_searcher_input_svg_outer_circle"
+                            cx="10"
+                            cy="6"
+                            r="6"
+                            fill="#C4C4C4"
+                        />
+                        <circle cx="10" cy="6" r="4" fill="#ffffff" />
                     </svg>
-                </button>
-            </form>
-            <div id="todo_tools" class="todo_tools">
-                <input
-                    type="text"
-                    placeholder="I am looking for..."
-                    class="todo_input todo_searcher_input"
-                    id="todo_searcher_input"
-                />
-                <svg
-                    class="todo_searcher_input_svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <rect
-                        x="7.07104"
-                        y="8"
-                        width="2"
-                        height="9"
-                        rx="1"
-                        transform="rotate(45 7.07104 8)"
-                        fill="#C4C4C4"
-                    />
-                    <circle
-                        class="todo_searcher_input_svg_outer_circle"
-                        cx="10"
-                        cy="6"
-                        r="6"
-                        fill="#C4C4C4"
-                    />
-                    <circle cx="10" cy="6" r="4" fill="#ffffff" />
-                </svg>
-                <button
-                    class="todo_button todo_fullclearer_button"
-                    id="todo_fullclearer_button"
-                >
-                    Clear all
-                </button>
-            </div>
-            <div class="todo_container">
-                <ul class="todo_list" id="todo_list"></ul>
-            </div>
-        </main>
+                    <button
+                        class="todo_button todo_fullclearer_button"
+                        id="todo_fullclearer_button"
+                    >
+                        Clear all
+                    </button>
+                </div>
+                <div id="todo_container" class="todo_container">
+                    <ul class="todo_list" id="todo_list"></ul>
+                </div>
+            </main>
+        </div>
 
         <script src="./index.js"></script>
     </body>

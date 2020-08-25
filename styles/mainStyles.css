@@ -1,30 +1,38 @@
 @import './resetStyles.css';
 
-/* Custom styles */
 html {
     font-size: 10px;
     color: #313131;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.root-container {
+    width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+.main-container {
+    margin: 30px 0 0 0;
+}
+
 header h1 {
     font-weight: bold;
     font-size: 4.8rem;
-    margin-top: 145px;
 }
 
 .todo_creator {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 30px 0;
 }
 
 .todo_tools {
@@ -32,6 +40,7 @@ header h1 {
     justify-content: center;
     align-items: center;
     position: relative;
+    margin: 30px 0 0 0;
 }
 
 .todo_tools svg {
@@ -54,10 +63,18 @@ header h1 {
     margin-top: 30px;
 }
 
+.todo_container {
+    display: none;
+    margin-top: 10px;
+}
+
 .todo_item {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.todo_item:not(:first-child) {
     margin-top: 10px;
 }
 
@@ -86,38 +103,30 @@ header h1 {
     outline: none;
     border-style: solid;
     border-width: 2px;
-    height: 36px;
 }
 
 .todo_creator_input {
-    width: 265px;
+    width: 305px;
 }
 
 .todo_creator_input:focus {
-    width: 261px;
     border-color: #8a77ff;
 }
 
 .todo_searcher_input {
-    width: 163px;
+    width: 240px;
     padding: 0 56px 0 20px;
 }
 
-.todo_searcher_input:focus {
-    width: 159px;
-}
-
 .search_todo_input {
-    width: 140px;
+    width: 180px;
 }
 
 .todo_input.todo_item_input {
-    width: 220px;
+    width: 260px;
 }
 
 .todo_input.todo_item_input.input_edit_mode {
-    height: 36px;
-    width: 216px;
     border-style: solid;
     border-width: 2px;
     border-color: #00d108;
@@ -169,7 +178,7 @@ header h1 {
 .todo_fullclearer_button {
     background-color: #ea0001;
     color: #ffffff;
-    width: 106px;
+    width: 105px;
 }
 
 .todo_fullclearer_button:hover,
@@ -225,10 +234,6 @@ header h1 {
 .remove_todo_button:focus .remove_todo_button_svg,
 .remove_todo_button:hover .remove_todo_button_svg {
     fill: #ea0001;
-}
-
-.todo_fullclearer_button {
-    width: 106px;
 }
 
 .todo_fullclearer_button:hover {

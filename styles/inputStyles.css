@@ -6,7 +6,6 @@
 
 .todo_input {
     background-color: #fff;
-    font-family: 'Ubuntu', sans-serif;
     color: #313131;
     font-size: 18px;
     height: 40px;
@@ -20,7 +19,6 @@
 }
 
 .todo_input::placeholder {
-    font-family: 'Ubuntu', sans-serif;
     color: #c4c4c4;
     font-size: 1.8rem;
 }

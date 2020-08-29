@@ -11,15 +11,15 @@
         <title>Todo list</title>
     </head>
     <body>
-        <div class="root-container">
-            <header>
-                <h1>What to do?</h1>
-            </header>
-            <main class="main-container">
+        <header class="header">
+            <h1 class="header__heading-1">What to do?</h1>
+        </header>
+        <main class="main">
+            <div class="container">
                 <form class="todo_creator">
                     <input
-                        type="text"
                         class="todo_input todo_creator_input"
+                        type="text"
                         id="todo_creator_input"
                         autofocus
                     />
@@ -48,11 +48,11 @@
                         </svg>
                     </button>
                 </form>
-                <div id="todo_tools" class="todo_tools">
+                <div class="todo_tools" id="todo_tools">
                     <input
+                        class="todo_input todo_searcher_input"
                         type="text"
                         placeholder="I am looking for..."
-                        class="todo_input todo_searcher_input"
                         id="todo_searcher_input"
                     />
                     <svg
@@ -88,11 +88,11 @@
                         Clear all
                     </button>
                 </div>
-                <div id="todo_container" class="todo_container">
+                <div class="todo_container" id="todo_container">
                     <ul class="todo_list" id="todo_list"></ul>
                 </div>
-            </main>
-        </div>
+            </div>
+        </main>
 
         <script src="./index.js"></script>
     </body>

@@ -1,24 +1,19 @@
-html {
+body {
+    font-family: 'Ubuntu', sans-serif;
     font-size: 10px;
     color: #313131;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.root-container {
-    width: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-header h1 {
+.container {
+    width: 350px;
+    margin: 0px auto;
+}
+
+.header__heading-1 {
     font-weight: bold;
     font-size: 4.8rem;
 }

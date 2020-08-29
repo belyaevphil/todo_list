@@ -1,4 +1,4 @@
-.todo_button {
+.button {
     font-size: 1.8rem;
     height: 40px;
     border-style: none;
@@ -13,51 +13,51 @@
     align-items: center;
 }
 
-.todo_button:focus,
-.todo_button:hover {
+.button:focus,
+.button:hover {
     outline: none;
     background-color: #ffffff;
     border-style: solid;
     border-width: 2px;
 }
 
-.todo_creator_button {
+.main__todo-creator-button {
     background-color: #8a77ff;
     width: 40px;
 }
 
-.todo_creator_button:focus {
+.main__todo-creator-button:focus {
     border-color: #8a77ff;
 }
 
-.todo_creator_button:hover {
+.main__todo-creator-button:hover {
     border-color: #8a77ff;
 }
 
-.todo_creator_button:focus svg,
-.todo_creator_button:hover svg {
+.main__todo-creator-button:focus .main__todo-creator-svg,
+.main__todo-creator-button:hover .main__todo-creator-svg {
     fill: #8a77ff;
 }
 
-.todo_fullclearer_button {
+.main__todo-all-clear-button {
     background-color: #ea0001;
     color: #ffffff;
     width: 105px;
 }
 
-.todo_fullclearer_button:hover,
-.todo_fullclearer_button:focus {
+.main__todo-all-clear-button:hover,
+.main__todo-all-clear-button:focus {
     border-color: #ea0001;
     color: #ea0001;
 }
 
-.edit_todo_button {
+.main__edit-todo-button {
     background-color: #00d108;
     width: 40px;
 }
 
-.edit_mode,
-.edit_todo_button:hover {
+.main__edit-todo-button--edit-mode,
+.main__edit-todo-button:hover {
     background-color: #ffffff;
     transition: 200ms;
     border-color: #00d108;
@@ -66,47 +66,40 @@
     border-radius: 20px;
 }
 
-.edit_todo_button:focus {
+.main__edit-todo-button:focus {
     border-color: #00d108;
 }
 
-.edit_mode .edit_todo_button_svg path,
-.edit_todo_button:hover .edit_todo_button_svg path,
-.edit_todo_button:focus .edit_todo_button_svg path {
+.main__edit-todo-button--edit-mode .main__edit-todo-svg path,
+.main__edit-todo-button:hover .main__edit-todo-svg path,
+.main__edit-todo-button:focus .main__edit-todo-svg path {
     fill: #00d108;
 }
 
-.edit_mode:hover {
+.main__edit-todo-button--edit-mode:hover {
     background-color: #00d108;
     border-style: none;
 }
 
-.edit_mode:hover .edit_todo_button_svg path {
+.main__edit-todo-button--edit-mode:hover .main__edit-todo-svg path {
     fill: #ffffff;
 }
 
-.remove_todo_button {
+.main__remove-todo-button {
     background-color: #ea0001;
     width: 40px;
 }
 
-.remove_todo_button:hover,
-.remove_todo_button:focus {
+.main__remove-todo-button:hover,
+.main__remove-todo-button:focus {
     border-color: #ea0001;
 }
 
-.remove_todo_button:focus .remove_todo_button_svg,
-.remove_todo_button:hover .remove_todo_button_svg {
+.main__remove-todo-button:focus .main__remove-todo-svg,
+.main__remove-todo-button:hover .main__remove-todo-svg {
     fill: #ea0001;
 }
 
-.todo_fullclearer_button:hover {
-    border-color: #ea0001;
-}
-
-.todo_button_svg,
-.todo_searcher_input_svg,
-.remove_todo_button_svg,
-.edit_todo_button_svg {
+.svg {
     pointer-events: none;
 }

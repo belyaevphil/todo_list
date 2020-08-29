@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/ubuntu-regular-webfont.woff2'),
+        url('../fonts/Ubuntu/ubuntu-regular-webfont.woff');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/ubuntu-bold-webfont.woff2'),
+        url('../fonts/Ubuntu/ubuntu-bold-webfont.woff');
+    font-weight: 700;
+    font-display: swap;
+}

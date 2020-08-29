@@ -3,33 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
         <link rel="stylesheet" href="./styles/allStyles.css" />
         <title>Todo list</title>
     </head>
     <body>
-        <header class="header">
-            <h1 class="header__heading-1">What to do?</h1>
-        </header>
-        <main class="main">
-            <div class="container">
-                <form class="todo_creator">
+        <div class="wrapper">
+            <header class="header">
+                <h1 class="header__heading">What to do?</h1>
+            </header>
+            <main class="main">
+                <form class="main__todo-creator-form">
                     <input
-                        class="todo_input todo_creator_input"
+                        class="main__todo-creator-input input"
+                        id="main__todo-creator-input"
                         type="text"
-                        id="todo_creator_input"
                         autofocus
                     />
                     <button
-                        class="todo_button todo_creator_button"
-                        id="todo_creator_button"
+                        class="main__todo-creator-button button"
+                        id="main__todo-creator-button"
                         type="submit"
                     >
                         <svg
-                            class="todo_button_svg"
+                            class="main__todo-creator-svg svg"
                             width="16"
                             height="16"
                             viewBox="0 0 16 16"
@@ -48,51 +44,37 @@
                         </svg>
                     </button>
                 </form>
-                <div class="todo_tools" id="todo_tools">
+                <div class="main__todo-tools" id="main__todo-tools">
                     <input
-                        class="todo_input todo_searcher_input"
+                        class="main__todo-searcher-input input"
+                        id="main__todo-searcher-input"
                         type="text"
                         placeholder="I am looking for..."
-                        id="todo_searcher_input"
                     />
                     <svg
-                        class="todo_searcher_input_svg"
+                        class="main__todo-searcher-svg svg"
                         width="16"
                         height="16"
                         viewBox="0 0 16 16"
-                        fill="none"
+                        fill="#c4c4c4"
                         xmlns="http://www.w3.org/2000/svg"
                     >
-                        <rect
-                            x="7.07104"
-                            y="8"
-                            width="2"
-                            height="9"
-                            rx="1"
-                            transform="rotate(45 7.07104 8)"
-                            fill="#C4C4C4"
+                        <path
+                            d="M11.4351 10.0629H10.7078L10.4563 9.81132C11.3528 8.77303 11.8925 7.42367 11.8925 5.94627C11.8925 2.66209 9.2304 0 5.94627 0C2.66214 0 0 2.66209 0 5.94627C0 9.23045 2.66209 11.8925 5.94627 11.8925C7.42367 11.8925 8.77303 11.3528 9.81132 10.4608L10.0629 10.7124V11.4351L14.6369 16L16 14.6369L11.4351 10.0629ZM5.94627 10.0629C3.67299 10.0629 1.82963 8.21955 1.82963 5.94627C1.82963 3.67299 3.67299 1.82963 5.94627 1.82963C8.21955 1.82963 10.0629 3.67299 10.0629 5.94627C10.0629 8.21955 8.21955 10.0629 5.94627 10.0629Z"
                         />
-                        <circle
-                            class="todo_searcher_input_svg_outer_circle"
-                            cx="10"
-                            cy="6"
-                            r="6"
-                            fill="#C4C4C4"
-                        />
-                        <circle cx="10" cy="6" r="4" fill="#ffffff" />
                     </svg>
                     <button
-                        class="todo_button todo_fullclearer_button"
-                        id="todo_fullclearer_button"
+                        class="main__todo-all-clear-button button"
+                        id="main__todo-all-clear-button"
                     >
                         Clear all
                     </button>
                 </div>
-                <div class="todo_container" id="todo_container">
-                    <ul class="todo_list" id="todo_list"></ul>
+                <div class="main__todo-container" id="main__todo-container">
+                    <ul class="main__todo-list" id="main__todo-list"></ul>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
 
         <script src="./index.js"></script>
     </body>

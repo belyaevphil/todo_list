@@ -1,10 +1,10 @@
-const todoCreatorInput = document.querySelector("#todo_creator_input")
-const todoCreatorButton = document.querySelector("#todo_creator_button")
-const todoList = document.querySelector("#todo_list")
-const todoFullClearerButton = document.querySelector("#todo_fullclearer_button")
-const todoSearcherInput = document.querySelector("#todo_searcher_input")
-const todoTools = document.querySelector("#todo_tools")
-const todoContainer = document.querySelector("#todo_container")
+const todoCreatorInput = document.querySelector("#main__todo-creator-input")
+const todoCreatorButton = document.querySelector("#main__todo-creator-button")
+const todoList = document.querySelector("#main__todo-list")
+const todoAllClearButton = document.querySelector("#main__todo-all-clear-button")
+const todoSearcherInput = document.querySelector("#main__todo-searcher-input")
+const todoTools = document.querySelector("#main__todo-tools")
+const todoContainer = document.querySelector("#main__todo-container")
 
 const storageName = 'todos'
 
@@ -34,23 +34,23 @@ const renderStorageItems = () => {
     todos.forEach(todo => {
         const todoItem = document.createElement('li')
         todoList.append(todoItem)
-        todoItem.classList.add('todo_item')
+        todoItem.classList.add('main__todo-item')
 
         const todoItemInput = document.createElement('input')
         todoItem.append(todoItemInput)
-        todoItemInput.classList.add('todo_input')
-        todoItemInput.classList.add('todo_item_input')
+        todoItemInput.classList.add('main__todo-item-input')
+        todoItemInput.classList.add('input')
         todoItemInput.value = todo
         todoCreatorInput.value = ''
         todoItemInput.disabled = true
 
         const editTodoButton = document.createElement('button')
         todoItem.append(editTodoButton)
-        editTodoButton.classList.add('todo_button')
-        editTodoButton.classList.add('edit_todo_button')
+        editTodoButton.classList.add('main__edit-todo-button')
+        editTodoButton.classList.add('button')
         editTodoButton.innerHTML = `
             <svg
-                class="edit_todo_button_svg"
+                class="main__edit-todo-svg svg"
                 width="16"
                 height="16"
                 viewBox="0 0 16 16"
@@ -70,11 +70,11 @@ const renderStorageItems = () => {
 
         const removeTodoButton = document.createElement('button')
         todoItem.append(removeTodoButton)
-        removeTodoButton.classList.add('todo_button')
-        removeTodoButton.classList.add('remove_todo_button')
+        removeTodoButton.classList.add('main__remove-todo-button')
+        removeTodoButton.classList.add('button')
         removeTodoButton.innerHTML = `
             <svg
-                class="remove_todo_button_svg"
+                class="main__remove-todo-svg svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -131,12 +131,12 @@ const addTodo = e => {
     if (todoCreatorInput.value) {
         const todoItem = document.createElement('li')
         todoList.append(todoItem)
-        todoItem.classList.add('todo_item')
+        todoItem.classList.add('main__todo-item')
 
         const todoItemInput = document.createElement('input')
         todoItem.append(todoItemInput)
-        todoItemInput.classList.add('todo_input')
-        todoItemInput.classList.add('todo_item_input')
+        todoItemInput.classList.add('main__todo-item-input')
+        todoItemInput.classList.add('input')
         todoItemInput.value = todoCreatorInput.value
         todoCreatorInput.value = ''
         todoItemInput.disabled = true
@@ -144,11 +144,11 @@ const addTodo = e => {
 
         const editTodoButton = document.createElement('button')
         todoItem.append(editTodoButton)
-        editTodoButton.classList.add('todo_button')
-        editTodoButton.classList.add('edit_todo_button')
+        editTodoButton.classList.add('main__edit-todo-button')
+        editTodoButton.classList.add('button')
         editTodoButton.innerHTML = `
             <svg
-                class="edit_todo_button_svg"
+                class="main__edit-todo-svg svg"
                 width="16"
                 height="16"
                 viewBox="0 0 16 16"
@@ -168,11 +168,11 @@ const addTodo = e => {
 
         const removeTodoButton = document.createElement('button')
         todoItem.append(removeTodoButton)
-        removeTodoButton.classList.add('todo_button')
-        removeTodoButton.classList.add('remove_todo_button')
+        removeTodoButton.classList.add('main__remove-todo-button')
+        removeTodoButton.classList.add('button')
         removeTodoButton.innerHTML = `
             <svg
-                class="remove_todo_button_svg"
+                class="main__remove-todo-svg svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -206,7 +206,7 @@ const addTodo = e => {
 const handleTodoItemButtons = e => {
     const todoItemButton = e.target
 
-    if (todoItemButton.classList[1] === 'remove_todo_button') {
+    if (todoItemButton.classList[0] === 'main__remove-todo-button') {
         const todoItem = todoItemButton.parentElement
         const todoList = todoItem.parentElement
         deleteItemFromStorage(todoItem)
@@ -218,12 +218,12 @@ const handleTodoItemButtons = e => {
         }
     }
 
-    if (todoItemButton.classList[1] === 'edit_todo_button') {
+    if (todoItemButton.classList[0] === 'main__edit-todo-button') {
         const todoItem = todoItemButton.parentElement
         const todoItemInput = todoItem.children[0]
         const editTodoItem = todoItem.children[1]
-        editTodoItem.classList.toggle('edit_mode')
-        todoItemInput.classList.toggle('input_edit_mode')
+        todoItemInput.classList.toggle('main__todo-item-input--edit-mode')
+        editTodoItem.classList.toggle('main__edit-todo-button--edit-mode')
         todoItemInput.disabled = !todoItemInput.disabled
         todoItemInput.focus()
         e.target.blur()
@@ -254,6 +254,6 @@ const handleInputChange = text => {
 
 todoCreatorButton.addEventListener('click', addTodo)
 todoList.addEventListener('click', handleTodoItemButtons)
-todoFullClearerButton.addEventListener('click', clearAllTodoItems)
+todoAllClearButton.addEventListener('click', clearAllTodoItems)
 todoSearcherInput.addEventListener('input', () => handleInputChange(todoSearcherInput.value))
 window.addEventListener('load', toDoOnWindowLoad)

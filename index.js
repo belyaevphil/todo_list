@@ -107,7 +107,9 @@ const renderStorageItems = () => {
 
 const getRandomPlaceholder = () => {
     const availablePlaceholders = ['Feed the fish...', 'Clean the room...', 'Do homework...']
-    return availablePlaceholders[Math.floor(Math.random() * availablePlaceholders.length)]
+    const randomNumber = Math.floor(Math.random() * availablePlaceholders.length)
+
+    return availablePlaceholders[randomNumber]
 }
 
 const toDoOnWindowLoad = () => {

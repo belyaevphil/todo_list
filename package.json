@@ -1,0 +1,24 @@
+{
+    "name": "todolist",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/belyaevphil/todo_list.git"
+    },
+    "keywords": [],
+    "author": "Phil Belyaev",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/belyaevphil/todo_list/issues"
+    },
+    "homepage": "https://github.com/belyaevphil/todo_list#readme",
+    "devDependencies": {
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    }
+}

@@ -11,8 +11,12 @@
         "type": "git",
         "url": "git+https://github.com/belyaevphil/todo_list.git"
     },
+    "browserslist": [
+        "> 1%",
+        "last 3 version"
+    ],
     "keywords": [],
-    "author": "Phil Belyaev",
+    "author": "https://github.com/belyaevphil",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/belyaevphil/todo_list/issues"

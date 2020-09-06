@@ -1,7 +1,9 @@
 const path = require("path");
-const common = require("./webpack.common");
+const webpack = require('webpack')
 const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+const common = require("./webpack.common");
 
 module.exports = merge(common, {
     mode: "development",
@@ -11,13 +13,14 @@ module.exports = merge(common, {
         overlay: true,
         open: true
     },
+    devtool: 'cheap-module-eval-source-map',
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist")
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: "./src/template.html"
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[file].map'
         })
     ],
     module: {

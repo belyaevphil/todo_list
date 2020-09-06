@@ -3,9 +3,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-const fileName = extension => isDevelopment ? `[name].${extension}` : `[name].[hash].min.${extension}`
+const PATHS = {
+    src: path.join(__dirname, '../src'),
+    dist: path.join(__dirname, '../dist'),
+    assets: 'assets/'
+}
 
 module.exports = {
+    externals: {
+        paths: PATHS
+    },
     entry: {
         main: ['@babel/polyfill', './index.js'],
         analytics: './analytics.ts',
@@ -14,8 +21,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.css', '.scss', '.ts'],
         alias: {
-            '@': path.resolve(__dirname, 'src'),
-            '@models': path.resolve(__dirname, 'src/models')
+            '@': path.resolve(__dirname, 'src')
         }
     },
     context: path.resolve(__dirname, 'src'),
@@ -30,7 +36,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: fileName('css')
+            filename: '[name].css'
         })
     ],
     module: {
@@ -41,7 +47,10 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: styleLoaders()
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader"
+                ]
             },
             {
                 test: /\.js$/,

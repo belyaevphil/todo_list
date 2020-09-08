@@ -9,7 +9,6 @@ module.exports = merge(common, {
     mode: "development",
     devServer: {
         port: 3000,
-        hot: true,
         overlay: true,
         open: true
     },
@@ -18,11 +17,6 @@ module.exports = merge(common, {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist")
     },
-    plugins: [
-        new webpack.SourceMapDevToolPlugin({
-            filename: '[file].map'
-        })
-    ],
     module: {
         rules: [
             {

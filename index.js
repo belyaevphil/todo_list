@@ -129,6 +129,7 @@ const deleteItemFromStorage = (todo) => {
 const addTodo = e => {
     e.preventDefault()
     e.target.blur()
+    e.target.active = !e.target.active
 
     if (todoCreatorInput.value) {
         const todoItem = document.createElement('li')
@@ -229,6 +230,7 @@ const handleTodoItemButtons = e => {
         todoItemInput.disabled = !todoItemInput.disabled
         todoItemInput.focus()
         e.target.blur()
+        e.target.active = !e.target.active
     }
 }
 

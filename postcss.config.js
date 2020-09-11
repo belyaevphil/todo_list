@@ -1,6 +1,7 @@
 module.exports = {
-    plugins: [
-        require('autoprefixer'),
-        require('cssnano')
-    ]
+  plugins: [
+    require('postcss-sort-media-queries'),
+    require('autoprefixer'),
+    require('cssnano')
+  ]
 }

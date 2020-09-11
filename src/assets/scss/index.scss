@@ -1,0 +1,271 @@
+@import './normalize';
+@import './reset';
+@import './fonts';
+@import './mixins';
+@import './vars';
+
+body {
+  font-family: $mainRegularFont;
+  color: #313131;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.header {
+  &__heading {
+    font-family: $mainBoldFont;
+    font-size: 4.8rem;
+    text-align: center;
+    margin-top: 100px;
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__todo-creator-form {
+    margin-top: 30px;
+  }
+  &__todo-tools {
+    margin-top: 30px;
+  }
+  &__todo-container {
+    margin-top: 10px;
+  }
+}
+
+.todo-creator-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__input {
+    width: 305px;
+    &:focus {
+      border-color: #8a77ff;
+    }
+    @media (max-width: 374px) {
+      width: 255px;
+    }
+  }
+  &__button {
+    margin-left: 5px;
+  }
+}
+
+.todo-creator-button {
+  background-color: #8a77ff;
+  width: 40px;
+  &:focus {
+    border-color: #8a77ff;
+  }
+  &:focus &__svg {
+    fill: #8a77ff;
+  }
+}
+
+.has-hover {
+  .todo-creator-button {
+    &:hover {
+      border-color: #8a77ff;
+    }
+  }
+}
+
+.has-hover .todo-creator-button:hover .todo-creator-button__svg {
+  fill: #8a77ff;
+}
+
+.todo-tools {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &__input {
+    width: 240px;
+    padding: 0 56px 0 20px;
+    &:focus {
+      border-color: #313131;
+    }
+    @media (max-width: 374px) {
+      width: 210px;
+      padding-right: 45px;
+    }
+  }
+  &__svg {
+    position: absolute;
+    top: 12px;
+    right: 131px;
+  }
+  &__input:focus + &__svg {
+    fill: #313131;
+  }
+  &__button {
+    background-color: #ea0001;
+    color: #ffffff;
+    width: 105px;
+    margin-left: 5px;
+    &:hover,
+    &:focus {
+      border-color: #ea0001;
+      color: #ea0001;
+    }
+    @media (max-width: 374px) {
+      width: 85px;
+    }
+  }
+}
+
+.todo-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  &__item {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+}
+
+.input {
+  background-color: #fff;
+  color: #313131;
+  font-size: 18px;
+  height: 40px;
+  line-height: 20px;
+  outline: none;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 20px;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+  padding: 0 20px;
+  &::placeholder {
+    color: #c4c4c4;
+    font-size: 1.8rem;
+  }
+}
+
+.button {
+  font-size: 1.8rem;
+  height: 40px;
+  border-style: none;
+  border-radius: 20px;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 2px;
+  }
+}
+
+.has-hover {
+  .button {
+    &:hover {
+      outline: none;
+      background-color: #ffffff;
+      border-style: solid;
+      border-width: 2px;
+    }
+  }
+}
+
+.edit-button {
+  background-color: #00d108;
+  width: 40px;
+  &--edit-mode {
+    background-color: #ffffff;
+    transition: 200ms;
+    border-color: #00d108;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+  }
+  &:focus {
+    border-color: #00d108;
+  }
+  &--edit-mode &__svg,
+  &:focus &__svg {
+    fill: #00d108;
+  }
+}
+
+.has-hover {
+  .edit-button {
+    &:hover {
+      background-color: #ffffff;
+      transition: 200ms;
+      border-color: #00d108;
+      border-style: solid;
+      border-width: 2px;
+      border-radius: 20px;
+    }
+    &--edit-mode {
+      &:hover {
+        background-color: #00d108;
+        border-style: none;
+      }
+    }
+  }
+}
+
+.has-hover .edit-button:hover .edit-button__svg {
+  fill: #00d108;
+}
+
+.has-hover .edit-button--edit-mode:hover .edit-button__svg {
+  fill: #ffffff;
+}
+
+.remove-button {
+  background-color: #ea0001;
+  width: 40px;
+  &:hover,
+  &:focus {
+    border-color: #ea0001;
+  }
+  &:focus &__svg,
+  &:hover &__svg {
+    fill: #ea0001;
+  }
+}
+
+.list-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__input {
+    width: 260px;
+    &--edit-mode {
+      border-color: #00d108;
+    }
+    @media (max-width: 374px) {
+      width: 210px;
+    }
+  }
+  &__edit-button {
+    margin-left: 5px;
+  }
+  &__remove-button {
+    margin-left: 5px;
+  }
+}
+
+.svg {
+  pointer-events: none;
+}

@@ -1,53 +1,48 @@
 {
-    "name": "todolist",
-    "version": "1.0.0",
-    "description": "",
-    "private": "true",
-    "scripts": {
-        "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
-        "build": "webpack --config ./webpack/webpack.prod.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/belyaevphil/todo_list.git"
-    },
-    "browserslist": [
-        "> 1%",
-        "last 3 version"
-    ],
-    "keywords": [],
-    "author": "https://github.com/belyaevphil",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/belyaevphil/todo_list/issues"
-    },
-    "homepage": "https://github.com/belyaevphil/todo_list#readme",
-    "devDependencies": {
-        "@babel/core": "^7.11.6",
-        "@babel/plugin-proposal-class-properties": "^7.10.4",
-        "@babel/preset-env": "^7.11.5",
-        "@babel/preset-typescript": "^7.10.4",
-        "autoprefixer": "^9.8.6",
-        "babel-loader": "^8.1.0",
-        "clean-webpack-plugin": "^3.0.0",
-        "copy-webpack-plugin": "^6.1.0",
-        "css-loader": "^4.2.2",
-        "cssnano": "^4.1.10",
-        "file-loader": "^6.1.0",
-        "html-webpack-plugin": "^4.4.1",
-        "mini-css-extract-plugin": "^0.11.0",
-        "node-sass": "^4.14.1",
-        "optimize-css-assets-webpack-plugin": "^5.0.4",
-        "postcss-loader": "^3.0.0",
-        "sass-loader": "^10.0.2",
-        "style-loader": "^1.2.1",
-        "terser-webpack-plugin": "^4.1.0",
-        "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.0",
-        "webpack-merge": "^5.1.3"
-    },
-    "dependencies": {
-        "@babel/polyfill": "^7.11.5"
-    }
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "todo app for routine matters",
+  "private": "true",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack/webpack.dev.js",
+    "build": "webpack --config ./webpack/webpack.prod.js"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
+  "keywords": [
+    "todo app",
+    "todo list"
+  ],
+  "author": "https://github.com/belyaevphil",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "autoprefixer": "^9.8.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^4.1.1",
+    "cssnano": "^4.1.10",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-sort-media-queries": "^1.7.26",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.0.9"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
+  }
 }
